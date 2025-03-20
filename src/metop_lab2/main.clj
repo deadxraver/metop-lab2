@@ -1,7 +1,8 @@
 (ns metop-lab2.main
   (:require [metop-lab2.half-div :as half-div]
             [metop-lab2.golden-ratio :as golden-ratio]
-            [metop-lab2.hord :as hord])
+            [metop-lab2.hord :as hord]
+            [metop-lab2.newton :as newton])
   )
 
 (def min-format "x_m = %.3f; y_m = %.3f\n")
@@ -20,3 +21,6 @@
 (println "Метод хорд:")
 (def h (hord/find-extremum a b eps))
 (printf extremum-format (get h 0) (get h 1))
+(println "Метод Ньютона:")
+(def n (newton/find-extremum a b eps))
+(printf extremum-format (get n 0) (get n 1))

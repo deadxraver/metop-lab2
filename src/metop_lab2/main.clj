@@ -10,7 +10,7 @@
 
 (def a 1.0)
 (def b 2.0)
-(def eps 0.005)
+(def eps 0.00001)
 
 (println "Метод половинного деления:")
 (def h-d (half-div/find-minimum a b eps))

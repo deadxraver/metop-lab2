@@ -10,10 +10,10 @@
 
 (def find-extremum (fn
                      ([x eps iter _] (
-                                               let [big-f (derivative-hc x) big-f-der (double-derivative x)]
-                                               (printf str-format iter x big-f big-f-der (f x))
-                                               (if (<= (abs big-f) eps) [x (f x)] (recur (- x (/ big-f big-f-der)) eps (+ iter 1) 0))
-                                               )
+                                       let [big-f (derivative-hc x) big-f-der (double-derivative x)]
+                                       (printf str-format iter x big-f big-f-der (f x))
+                                       (if (<= (abs big-f) eps) [x (f x)] (recur (- x (/ big-f big-f-der)) eps (+ iter 1) 0))
+                                       )
                       )
                      ([a b eps]
                       (println "|\t№\t|\tx0\t\t|\tF(x)\t|\tF'(x)\t|\tf(x)\t|")

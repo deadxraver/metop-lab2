@@ -13,7 +13,7 @@
                       (let [x-tilda (- a (/ (* (derivative a) (- a b)) (- (derivative a) (derivative b))))
                             a-new (if (> (derivative x-tilda) 0) a x-tilda) b-new (if (> (derivative x-tilda) 0) x-tilda b)]
                         (printf str-format iter a b x-tilda (derivative x-tilda))
-                          (if (<= (abs (derivative x-tilda)) eps) [x-tilda (f x-tilda)] (recur a-new b-new eps (- iter 1)))
+                        (if (<= (abs (derivative x-tilda)) eps) [x-tilda (f x-tilda)] (recur a-new b-new eps (- iter 1)))
                         )
                       )
                      ([a b eps]
